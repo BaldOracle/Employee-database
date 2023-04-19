@@ -23,8 +23,9 @@
   },
   "homepage": "https://github.com/BaldOracle/Employee-database#readme",
   "dependencies": {
+    "console.table": "^0.10.0",
     "dotenv": "^16.0.3",
-    "inquirer": "^9.1.5",
-    "mysql2": "^2.3.0"
+    "inquirer": "^8.2.4",
+    "mysql2": "^2.3.3"
   }
 }

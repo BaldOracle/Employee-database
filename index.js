@@ -10,6 +10,20 @@ function viewAllEmployees() {
     })
 }
 
+function viewAllDepartments() {
+    db.query("SELECT * FROM department", (err, data) => {
+      if (err) throw err;
+      console.table(data);
+    });
+  }
+
+function viewAllRoles(){
+    db.query("SELECT * FROM role", (err,data)=>{
+        if (err) throw err;
+        console.table(data);
+      })
+}
+  
 console.log('before function')
 
 function dbOperation() {
@@ -34,10 +48,10 @@ function dbOperation() {
             console.log('it is working');
             switch (response.option) {
                 case 'View All Departments':
-                    // TODO: Implement view all departments functionality
+                    viewAllDepartments();
                     break;
                 case 'View All Roles':
-                    // TODO: Implement view all roles functionality
+                    viewAllRoles();
                     break;
                 case 'view all employees':
                     viewAllEmployees();
@@ -55,7 +69,7 @@ function dbOperation() {
                     // TODO: Implement update employee role functionality
                     break;
             }
-        })//,console.log('before the error catch')
+        })
         .catch((error) => {
             if (error.isTtyError) {
                 console.log(error)
