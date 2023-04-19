@@ -1,39 +1,38 @@
-// import inquirer from "inquirer";
-// const inquirer = require('inquirer');
-//  const conn = require("./config/connection");
-// const table = require("console.table");
-// const db = require("./db/connection.js");
-// import db from './db/db.js';
-
 import inquirer from 'inquirer';
 import db from './db/connection.js';
-// import { prompt } from 'inquirer';
 
-// const inquirer = require('inquirer');
 
 function viewAllEmployees() {
     db.query("SELECT * FROM employee", (err, data) => {
         if (err) throw err
-        console.log(err);
+        //console.log(err);
         console.table(data);
     })
 }
 
+console.log('before function')
 
-function DbOperation() {
+function dbOperation() {
     inquirer
         .prompt([
             {
                 type: 'list',
                 name: 'option',
                 message: 'What would you like to do?',
-                choices: ['View All Departments', 'View All Roles', 'view all employees', 'Add a Department', 'Add a Role', 'Add an Employee', 'Update an Employee Role']
-            },
-        ]).then((response) => {
-            console.log(option)
-            console.log(response)
-            let option = response
-            switch (option) {
+                choices: [
+                    'View All Departments',
+                    'View All Roles',
+                    'view all employees',
+                    'Add a Department',
+                    'Add a Role',
+                    'Add an Employee',
+                    'Update an Employee Role'
+                ]
+            }
+        ])
+        .then((response) => {
+            console.log('it is working');
+            switch (response.option) {
                 case 'View All Departments':
                     // TODO: Implement view all departments functionality
                     break;
@@ -41,7 +40,7 @@ function DbOperation() {
                     // TODO: Implement view all roles functionality
                     break;
                 case 'view all employees':
-                    viewAllEmployees()
+                    viewAllEmployees();
                     break;
                 case 'Add a Department':
                     // TODO: Implement add department functionality
@@ -56,7 +55,7 @@ function DbOperation() {
                     // TODO: Implement update employee role functionality
                     break;
             }
-        })
+        })//,console.log('before the error catch')
         .catch((error) => {
             if (error.isTtyError) {
                 console.log(error)
@@ -66,7 +65,8 @@ function DbOperation() {
                 console.log(error)
             }
         });
-
 }
-DbOperation();
+
+console.log('about to call the function')
+dbOperation();
 
