@@ -1,6 +1,9 @@
-import inquirer from 'inquirer';
-import db from './db/connection.js';
+// import inquirer from 'inquirer';
+// import db from './db/connection.js';
 
+const inquirer = require('inquirer');
+const mysql = require('mysql2');
+const db = require('./db/connection.js');
 
 function viewAllEmployees() {
     db.query("SELECT * FROM employee", (err, data) => {
@@ -24,6 +27,17 @@ function viewAllRoles(){
       })
 }
   
+function addDepartment() {
+    inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'newDepartment',
+            message: 'What is the name of the new department?'
+        }
+    ])
+}
+
 console.log('before function')
 
 function dbOperation() {
