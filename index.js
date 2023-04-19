@@ -27,18 +27,17 @@ function viewAllRoles(){
       })
 }
   
-function addDepartment() {
-    inquirer
-    .prompt([
-        {
-            type: 'input',
-            name: 'newDepartment',
-            message: 'What is the name of the new department?'
-        }
-    ])
-}
+// function addDepartment() {
+//     inquirer
+//     .prompt([
+//         {
+//             type: 'input',
+//             name: 'newDepartment',
+//             message: 'What is the name of the new department?'
+//         }
+//     ])
+// }
 
-console.log('before function')
 
 function dbOperation() {
     inquirer
@@ -59,7 +58,6 @@ function dbOperation() {
             }
         ])
         .then((response) => {
-            console.log('it is working');
             switch (response.option) {
                 case 'View All Departments':
                     viewAllDepartments();
@@ -95,6 +93,5 @@ function dbOperation() {
         });
 }
 
-console.log('about to call the function')
 dbOperation();
 
