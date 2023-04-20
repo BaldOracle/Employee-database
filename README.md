@@ -45,10 +45,10 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+![Video of working app](./assets/Employee-Database2.gif)
+
 <video width="320" height="240" controls>
-  <source src="assets/Employee-Database.webm" type="video/webm">
-  Your browser does not support the video tag.
+  <source src="./assets/Employee-Database.webm" type="video/webm">
+  <a href="./assets/Employee-Database.webm">Download the video</a>
 </video>
-
-
 
